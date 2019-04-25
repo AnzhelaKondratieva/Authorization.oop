@@ -7,6 +7,23 @@ class Users
 	public $login;
 	public $password;
 	public $lang;
+	public $users = [
+[
+'login' => 'Vasisualiy', 'password' => '12345', 'lang' => 'ru'
+],
+[
+'login' => 'Afanasiy', 'password' => '54321', 'lang' => 'en'
+],
+[
+'login' => 'Petro', 'password' => 'EkUC42nzmu', 'lang' => 'ua'
+],
+[
+'login' => 'Pedrolus', 'password' => 'Cogito_ergo_sum', 'lang' => 'it'
+],
+[
+'login' => 'Sasha', 'password' => 'Alea_est_jacta',
+],
+];
 	public function _construct($login, $password, $lang) {
 		$this->login = $login;
 		$this->password = $password;
@@ -28,24 +45,6 @@ $user1->login = 'Vasisualiy';
 $user1->password = '12345';
 $user1->lang = 'ru';
 $user1->authorization();
-$user2 = new Users();
-$user2->login = 'Afanasiy';
-$user2->password = '54321';
-$user2->lang = 'en';
-$user2->authorization();
-$user3 = new Users();
-$user3->login = 'Petro';
-$user3->password = 'EkUC42nzmu';
-$user3->lang = 'ua';
-$user3->authorization();
-$user4 = new Users();
-$user4->login = 'Pedrolus';
-$user4->password = 'Cogito_ergo_sum';
-$user4->lang = 'it';
-$user4->authorization();
-$user5 = new Users();
-$user5->login = 'Sasha';
-$user5->password = 'Alea_est_jacta';
 ?>
 
 
