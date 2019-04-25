@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 </head>
 <body>
-	<form action="" method="POST">
+	<form action="auth.php" method="POST">
  <label for="login">Логин</label><br>
  <input name="text" type="text" id="login"><br>
  <label for ="password">Пароль</label><br>
