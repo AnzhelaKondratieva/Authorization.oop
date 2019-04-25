@@ -12,7 +12,7 @@ class Users
 		$this->password = $password;
 		$this->lang = $lang;
 	}
-	function authorization($login, $password) {
+	function authorization() {
 		if (isset($_POST['text']) && $_POST['text'] == $this->login 
  			&& $_POST['password'] == $this->password){
 				$_SESSION['user'] = $this->login;
@@ -46,7 +46,6 @@ $user4->authorization();
 $user5 = new Users();
 $user5->login = 'Sasha';
 $user5->password = 'Alea_est_jacta';
-$user5->authorization();
 ?>
 
 
