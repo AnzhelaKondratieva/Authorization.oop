@@ -2,12 +2,7 @@
 session_start();
 ?>
 <?php
-class Users
-{
-	public $login;
-	public $password;
-	public $lang;
-	public $users = [
+$users = [
 [
 'login' => 'Vasisualiy', 'password' => '12345', 'lang' => 'ru'
 ],
@@ -24,7 +19,12 @@ class Users
 'login' => 'Sasha', 'password' => 'Alea_est_jacta',
 ],
 ];
-	public function _construct($login, $password, $lang) {
+class Users
+{
+	public $login;
+	public $password;
+	public $lang;
+	public function _construct($login, $password, $lang, $users) {
 		$this->login = $login;
 		$this->password = $password;
 		$this->lang = $lang;
@@ -41,9 +41,8 @@ class Users
 
 
 $user1 = new Users();
-$user1->login = 'Vasisualiy';
-$user1->password = '12345';
-$user1->lang = 'ru';
+$user1->login = 'Sasha';
+$user1->password = 'Alea_est_jacta';
 $user1->authorization();
 ?>
 
