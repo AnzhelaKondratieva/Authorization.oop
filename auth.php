@@ -57,6 +57,7 @@ return null;
 	}
 
 $user2 = new Users();
+$user2->authorization();
 $user2->getUser('Vasisualiy', '12345', 'ru');
 ?>
 
