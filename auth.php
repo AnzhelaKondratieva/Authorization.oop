@@ -24,26 +24,40 @@ class Users
 	public $login;
 	public $password;
 	public $lang;
-	public function _construct($login, $password, $lang, $users) {
+	public function _construct($login, $password, $lang) {
 		$this->login = $login;
 		$this->password = $password;
 		$this->lang = $lang;
 	}
-	function authorization() {
+	public function getUser($login, $password, $lang) {
+			if (isset($_SESSION['user'])) {
+				$number = $_SESSION['user'];
+				return new Users($users[$number]['login'], $users[$number]['password'], $users[$number]['lang']);
+			}
+			if ($_POST['text'] && $_POST['password']){
+foreach ($users as $key => $value) {
+if ($_POST['text'] == $value['login'] && $_POST['password'] == $value['password']) {
+$_SESSION['user'] = $key;
+return new Users($_POST['login'], $_POST['password'], $value['lang']);
+}
+}
+return null;
+
+}
+}
+	public function authorization() {
 		if (isset($_POST['text']) && $_POST['text'] == $this->login 
  			&& $_POST['password'] == $this->password){
 				$_SESSION['user'] = $this->login;
 				$_SESSION['lang'] = $this->lang;
 				header("Location: second.php");
 			}
+			
+			}
 	}
-}
 
-
-$user1 = new Users();
-$user1->login = 'Sasha';
-$user1->password = 'Alea_est_jacta';
-$user1->authorization();
+$user2 = new Users();
+$user2->getUser('Vasisualiy', '12345', 'ru');
 ?>
 
 
