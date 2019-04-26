@@ -42,10 +42,12 @@ return new Users($_POST['login'], $_POST['password'], $value['lang']);
 }
 }
 return null;
-
 }
 }
 	public function authorization() {
+		$this->login = $login;
+		$this->password = $password;
+		$this->lang = $lang;
 		if (isset($_POST['text']) && $_POST['text'] == $this->login 
  			&& $_POST['password'] == $this->password){
 				$_SESSION['user'] = $this->login;
